@@ -6,8 +6,6 @@ import java.util.Scanner;
  * Programm zur Berechnung von geometrischen Grössen von Figuren.
  */
 public class Geometry {
-
-/*  Diese Ziele HIER entfernen
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         boolean running = true;
@@ -61,7 +59,5 @@ public class Geometry {
         s.nextLine();
         return result;
     }
-
-    Diese Ziele HIER entfernen */
 }
 
