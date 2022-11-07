@@ -1,14 +1,19 @@
-package ch.fhnw.oop1.ub.stack.test;
+package ch.fhnw.oop1.ub.stack.impl.linked;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 import ch.fhnw.oop1.ub.stack.Stack;
+import ch.fhnw.oop1.ub.stack.test.AbstractStackTest;
 
-public abstract class AbstractStackTest {
-
-  // Erzeugt eine neue Stack Instanz.
-  public abstract Stack newStack();
+public class LinkedStackTest extends AbstractStackTest {
+  @Override
+  public Stack newStack() {
+    return new LinkedStack();
+  }
 
   @Test
   public void testIsEmpty() {
