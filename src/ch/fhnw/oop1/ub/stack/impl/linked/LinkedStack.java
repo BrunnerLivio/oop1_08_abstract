@@ -1,11 +1,11 @@
 package ch.fhnw.oop1.ub.stack.impl.linked;
 
 import ch.fhnw.oop1.ub.stack.Stack;
+import ch.fhnw.oop1.ub.stack.impl.AbstractStack;
 
-public class LinkedStack implements Stack {
+public class LinkedStack extends AbstractStack implements Stack {
 
   private Node root;
-  private int itemsCount = 0;
 
   private Node getNodeAtPosition(int position, Node rootNode) {
     Node currentNode = rootNode;
@@ -17,22 +17,6 @@ public class LinkedStack implements Stack {
 
   private Node getNodeAtPosition(int position) {
     return getNodeAtPosition(position, root);
-  }
-
-  @Override
-  public boolean isEmpty() {
-    return itemsCount == 0;
-  }
-
-  @Override
-  public int getSize() {
-    return itemsCount;
-  }
-
-  @Override
-  public void clear() {
-    root = null;
-    itemsCount = 0;
   }
 
   @Override
@@ -57,13 +41,6 @@ public class LinkedStack implements Stack {
       getNodeAtPosition(itemsCount - 1).next = newNode;
     }
     itemsCount++;
-  }
-
-  @Override
-  public void pushAll(Object[] elems) {
-    for (Object elem : elems) {
-      push(elem);
-    }
   }
 
   @Override

@@ -1,26 +1,10 @@
 package ch.fhnw.oop1.ub.stack.impl.array;
 
 import ch.fhnw.oop1.ub.stack.Stack;
+import ch.fhnw.oop1.ub.stack.impl.AbstractStack;
 
-public class ArrayStack implements Stack {
+public class ArrayStack extends AbstractStack implements Stack {
   private Object[] items = new Object[0];
-  private int itemsCount = 0;
-
-  @Override
-  public boolean isEmpty() {
-    return itemsCount == 0;
-  }
-
-  @Override
-  public int getSize() {
-    return itemsCount;
-  }
-
-  @Override
-  public void clear() {
-    items = new Object[0];
-    itemsCount = 0;
-  }
 
   @Override
   public Object peek() {
@@ -53,19 +37,6 @@ public class ArrayStack implements Stack {
 
     items[itemsCount] = elem;
     itemsCount++;
-  }
-
-  @Override
-  public void pushAll(Object[] elems) {
-    // The same as below
-    // for(int i = 0; i < elems.length; i++) {
-    // Object elem = elems[i];
-    // push(elem);
-    // }
-
-    for (Object elem : elems) {
-      push(elem);
-    }
   }
 
   @Override
